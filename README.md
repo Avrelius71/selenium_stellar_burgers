@@ -119,3 +119,19 @@ allure serve allure-results
 docker compose run --rm stellar-burgers-tests pytest --env=stage
 docker compose run --rm stellar-burgers-tests pytest -m smoke
 ```
+
+CI/CD (GitHub Actions)
+Пайплайн описан в .github/workflows/tests.yml.
+
+Когда запускается: на каждый push.
+
+Что делает:
+
+Собирает и запускает тесты (Клонирует репозиторий, устанавливает зависимости и гоняет тесты).
+Генерирует Allure-отчёт из allure-results.
+Сохраняет отчёт как artifact allure-report (хранение 14 дней).
+Как посмотреть отчёт из CI:
+
+Откройте вкладку Actions у репозитория.
+Выберите успешный (или завершённый) workflow run.
+Внизу страницы artifact с ссылкой на отчет
