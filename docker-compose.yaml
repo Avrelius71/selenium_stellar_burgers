@@ -1,0 +1,13 @@
+services:
+  stellar-burgers-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stellar_ui_tests
+    environment:
+      BROWSER: ${BROWSER:-chrome}
+      HEADLESS: ${HEADLESS:-true}
+    volumes:
+      - ./allure-results:/app/allure-results
+    mem_limit: 1536m
+    memswap_limit: 2048m
