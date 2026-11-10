@@ -135,3 +135,9 @@ CI/CD (GitHub Actions)
 Откройте вкладку Actions у репозитория.
 Выберите успешный (или завершённый) workflow run.
 Внизу страницы artifact с ссылкой на отчет
+
+### Пример Allure-отчёта
+
+Ниже представлен пример дашборда отчёта.
+
+![Allure Report Dashboard](images/allure-dashboard.png)
