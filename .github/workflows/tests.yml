@@ -31,7 +31,6 @@ jobs:
       - name: Запуск UI тестов
         run: |
           pytest -v --alluredir=./allure-results
-        continue-on-error: true
 
       - name: Получаем историю прогонов
         if: always()
