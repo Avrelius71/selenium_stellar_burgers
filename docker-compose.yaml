@@ -4,9 +4,17 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: stellar_ui_tests
+    env_file:
+      - .env
     environment:
-      BROWSER: ${BROWSER:-chrome}
-      HEADLESS: ${HEADLESS:-true}
+      # Переменные, которые могут переопределяться через терминал
+      - BROWSER=${BROWSER:-chrome}
+      - HEADLESS=${HEADLESS:-true}
+      # Явное указание переменных окружения для тестов (опционально, но надежно для CI/CD)
+      - USER1_EMAIL=${USER1_EMAIL}
+      - USER1_PASSWORD=${USER1_PASSWORD}
+      - USER2_EMAIL=${USER2_EMAIL}
+      - USER2_PASSWORD=${USER2_PASSWORD}
     volumes:
       - ./allure-results:/app/allure-results
     mem_limit: 1536m

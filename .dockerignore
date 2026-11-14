@@ -10,3 +10,4 @@ allure-report
 *.pyc
 .DS_Store
 README.md
+,env

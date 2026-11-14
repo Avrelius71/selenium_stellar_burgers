@@ -10,6 +10,7 @@ pages/            # Page Object: главная, логин, регистрац�
 tests/            # Сценарии: логин, регистрация, навигация
 conftest.py       # Фикстуры драйвера и страниц, CLI-флаги
 pytest.ini        # Значения по умолчанию и маркеры
+.env              # Креды юзеров
 Dockerfile        # Образ для изолированного прогона
 docker-compose.yaml
 ```
@@ -19,12 +20,14 @@ docker-compose.yaml
 1. Python 3.11+
 2. Google Chrome (для `--browser=chrome`) или Firefox
 3. Виртуальное окружение и зависимости:
+4. Создать файл .env и по шаблону заполнить данные (шаблон см. .env.example)
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
+
 
 ## Запуск тестов
 

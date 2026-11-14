@@ -4,3 +4,4 @@ selenium==4.45.0
 pytest-rerunfailures==15.0
 Faker==40.28.1
 pytest-xdist==3.8.0
+python-dotenv==1.2.4

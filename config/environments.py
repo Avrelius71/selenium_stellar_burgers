@@ -1,5 +1,11 @@
+import os
 from dataclasses import dataclass
 from enum import Enum
+from dotenv import load_dotenv
+
+
+# Загружаем переменные из файла .env (если он существует)
+load_dotenv()
 
 
 class Environment(str, Enum):
@@ -18,9 +24,18 @@ class UserCredentials:
 
 # Общие пользователи, доступные для всех окружений
 common_users = {
-    "user1": UserCredentials("test17@ya.ru", "Gfhjkm<ehuth"),
-    "user2": UserCredentials("AQA17@ya.ru", "Gfhjkm:jgf")
+    "user1": UserCredentials(
+        username=os.getenv("USER1_EMAIL", "default_user1@example.com"),
+        password=os.getenv("USER1_PASSWORD", "default_password")
+    ),
+    "user2": UserCredentials(
+        username=os.getenv("USER2_EMAIL", "default_user2@example.com"),
+        password=os.getenv("USER2_PASSWORD", "default_password")
+    )
 }
+
+if "default_password" in [common_users["user1"].password, common_users["user2"].password]:
+    print("WARNING: Тестовые пароли не найдены в .env файле! Используются значения по умолчанию.")
 
 
 @dataclass
