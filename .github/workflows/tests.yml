@@ -21,29 +21,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-name: UI Tests CI (Allure + Pages)
-
-on:
-  push:
-
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-jobs:
-  run-ui-tests:
-    name: Run Selenium UI Tests
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Копируем репозиторий
-        uses: actions/checkout@v4
-
-      - name: Устанавливаем Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
 
       - name: Устанавливаем зависимости
         run: |
